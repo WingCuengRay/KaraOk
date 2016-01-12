@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql
+QT       += core gui sql opengl
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -14,11 +14,24 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    people.cpp
+    people.cpp \
+    mysqldatabase.cpp \
+    query.cpp \
+    nehewidget.cpp \
+    logindlg.cpp
 
 HEADERS  += mainwindow.h \
-    people.h
+    people.h \
+    mysqldatabase.h \
+    query.h \
+    nehewidget.h \
+    logindlg.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    logindlg.ui
 
 CONFIG  +=  c++11
+
+LIBS    +=  -lglut -lGLU -lGL
+
+DISTFILES +=
